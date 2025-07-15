@@ -52,7 +52,8 @@ public class UserRestController {
         log.info("로그인 API 호출 - 사용자명 {}", reqDTO.getUsername());
         reqDTO.validate();
         UserResponse.LoginDTO loginUser = userService.login(reqDTO);
-        session.setAttribute(Define.SESSION_USER,loginUser);
+        //세션에 정보 저장
+//        session.setAttribute(Define.SESSION_USER,loginUser);
         return ResponseEntity.ok(new ApiUtil<>(loginUser));
     }
 
