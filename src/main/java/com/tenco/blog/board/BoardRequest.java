@@ -15,14 +15,13 @@ public class BoardRequest {
     @Data
     public static class SaveDTO {
         @NotEmpty(message = "제목을 입력하세요")
-        @Size(min = 1,max = 100,message = "제목은 1자 이상 100자 이내로 작성해주세요")
+        @Size(min = 1, max = 100, message = "제목은 1자 이상 100자 이내로 작성해주세요")
         private String title;
         @NotEmpty(message = "내용을 입력하세요")
-        @Size(min = 1,max = 5000,message = "내용은 1자 이상 5000자 이내로 작성해주세요")
+        @Size(min = 1, max = 5000, message = "내용은 1자 이상 5000자 이내로 작성해주세요")
         private String content;
-        // username 제거 : 세션에서 가져올 예정
 
-        // (User) <-- toEntity() 호출할 때 세션에서 가져와서 넣어 주면 됨
+
         public Board toEntity(User user) {
             return Board.builder()
                     .title(this.title)
@@ -36,10 +35,10 @@ public class BoardRequest {
     @Data
     public static class UpdateDTO {
         @NotEmpty(message = "제목을 입력하세요")
-        @Size(min = 1,max = 100,message = "제목은 1자 이상 100자 이내로 작성해주세요")
+        @Size(min = 1, max = 100, message = "제목은 1자 이상 100자 이내로 작성해주세요")
         private String title;
         @NotEmpty(message = "내용을 입력하세요")
-        @Size(min = 1,max = 5000,message = "내용은 1자 이상 5000자 이내로 작성해주세요")
+        @Size(min = 1, max = 5000, message = "내용은 1자 이상 5000자 이내로 작성해주세요")
         private String content;
 
     }

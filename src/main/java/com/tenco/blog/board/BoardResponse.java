@@ -1,6 +1,7 @@
 package com.tenco.blog.board;
 
 import com.tenco.blog.reply.Reply;
+import com.tenco.blog.user.SessionUser;
 import com.tenco.blog.user.User;
 import lombok.Builder;
 import lombok.Data;
@@ -39,7 +40,7 @@ public class BoardResponse {
         private boolean isBoardOwner;
         private List<ReplyDTO> replies;
 
-        public DetailDTO(Board board, User sessionUser) {
+        public DetailDTO(Board board, SessionUser sessionUser) {
             this.id = board.getId();
             this.title = board.getTitle();
             this.content = board.getContent();
@@ -65,7 +66,7 @@ public class BoardResponse {
 
         @Builder
 
-        public ReplyDTO(Reply reply, User sessionUser) {
+        public ReplyDTO(Reply reply, SessionUser sessionUser) {
             this.id = reply.getId();
             this.comment = reply.getComment();
             this.writerName = reply.getUser().getUsername();

@@ -30,7 +30,7 @@ public class LoginInterceptor implements HandlerInterceptor {
        log.debug("=== JWT 인증 인터셉터 시작 ===");
         String jwt = request.getHeader("Authorization");
         // Bearer + 공백 adsfasdfas.asdfasfsafaf.afsdfsadfsadf
-        if (jwt == null || jwt.startsWith("Bearer ")) {
+        if (jwt == null || jwt.startsWith("Bearer ") == false) {
             throw new Exception401("JWT 토큰을 전달해주세요");
         }
         jwt = jwt.replace("Bearer ", ""); // 이것을 쓰면adsfasdfas.asdfasfsafaf.afsdfsadfsadf이것만 남음

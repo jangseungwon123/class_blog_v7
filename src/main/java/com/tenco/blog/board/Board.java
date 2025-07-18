@@ -85,6 +85,10 @@ public class Board {
         // 물리적인 저장 장치인 DB에  Commit(반영 함)
     }
 
+    public String getWriterName (){
+        return this.getUser().getUsername();
+    }
+
 }
 
 
